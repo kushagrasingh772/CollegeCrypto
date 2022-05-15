@@ -27,9 +27,6 @@ Submitted To:
   <ol>
     <li>
       <a href="#Abstract">Abstract</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#Scope">Scope of the Project</a>
