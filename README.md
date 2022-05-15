@@ -469,27 +469,27 @@ Here are the things to consider at this stage:
 
 **Genesis Block being created**
 
-![Design](/CollegeCrypto-main/images/crypto_coin.jpg "Genesis Block")
+![Design](/images/crypto_coin.jpg "Genesis Block")
 
 **Mining a Block**
 
-![Design](/CollegeCrypto-main/images/mining.jpg "Mining")
+![Design](/images/mining.jpg "Mining")
 
 **Visualization of BlockChain**
 
-![Design](/CollegeCrypto-main/images/visualization.jpg "Visualization")
+![Design](/images/visualization.jpg "Visualization")
 
 **Adding a Transaction**
 
-![Design](/CollegeCrypto-main/images/addingtransactions.jpg "Adding transaction")
+![Design](/images/addingtransactions.jpg "Adding transaction")
 
 **Checking the validity of BlockChain**
 
-![Design](/CollegeCrypto-main/images/Checkingthevalidty.jpg "Validity Check")
+![Design](/images/Checkingthevalidty.jpg "Validity Check")
 
 **Mining by other users**
 
-![Design](/CollegeCrypto-main/images/mining_byother.jpg "Mining by other users")
+![Design](/images/mining_byother.jpg "Mining by other users")
 
 <a id="References"></a>
 
