@@ -64,6 +64,12 @@ Submitted To:
 
 ## ABSTRACT
 
+This project aims to highlight the salient features of Blockchain as a
+technology and makes use of BlockChain to create a Crypto Currency
+on the self made BlockChain using python programming language and
+Postman API platform. The Coin made can be mined and transacted on
+the Blockchain.
+
 “With e-currency based on cryptographic proof, without the need to trust a third party middleman, money
 can be secure and transactions effortless.” – Satoshi Nakamoto. 
 
