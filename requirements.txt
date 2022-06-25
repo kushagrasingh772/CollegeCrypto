@@ -1,0 +1,5 @@
+flask
+requests
+uuid
+urllib3
+markupsafe
