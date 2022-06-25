@@ -49,10 +49,10 @@ Submitted To:
         <a href="#Implemntation">Implementation</a>
     </li>
     <li>
-        <a href="#Design">Design of the Project</a>
+        <a href="#Explaination">Working and Explaination</a>
     </li>
     <li>
-        <a href="#Explaination">Working and Explaination</a>
+        <a href="#Setup">Setup</a>
     </li>
     <li>
         <a href="#References">References</a>
@@ -63,12 +63,6 @@ Submitted To:
 <a id="Abstract"></a>
 
 ## ABSTRACT
-
-This project aims to highlight the salient features of Blockchain as a
-technology and makes use of BlockChain to create a Crypto Currency
-on the self made BlockChain using python programming language and
-Postman API platform. The Coin made can be mined and transacted on
-the Blockchain.
 
 “With e-currency based on cryptographic proof, without the need to trust a third party middleman, money
 can be secure and transactions effortless.” – Satoshi Nakamoto. 
@@ -370,12 +364,6 @@ this article; this reward will get reduced by half its current value with time) 
 The URL parsing functions focus on splitting a URL string into its components, or on combining URL
 components into a URL string.
 
-<a id="Design"></a>
-
-## DESIGN OF THE PROJECT
-
-![Design](/CollegeCrypto-main/images/crypto_coin.jpg "Design of project")
-
 <a id="Implementation"></a>
 
 ## IMPLEMENTATION
@@ -494,6 +482,71 @@ Here are the things to consider at this stage:
 
 ![Design](/images/mining_byother.jpg "Mining by other users")
 
+---
+<a id="Setup"></a>
+
+## Setup
+
+```sh
+# install requirements
+pip3 install -r requirements.txt
+
+# setup nodes
+python3 run.py 5001
+python3 run.py 5002
+python3 run.py 5003
+
+# connect the nodes
+curl -X POST -H "Content-Type: application/json" -d '{
+ "nodes": ["http://127.0.0.1:5002"]
+}' "http://localhost:5001/connect_node"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+ "nodes": ["http://127.0.0.1:5003"]
+}' "http://localhost:5001/connect_node"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+ "nodes": ["http://127.0.0.1:5001"]
+}' "http://localhost:5002/connect_node"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+ "nodes": ["http://127.0.0.1:5003"]
+}' "http://localhost:5002/connect_node"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+ "nodes": ["http://127.0.0.1:5002"]
+}' "http://localhost:5003/connect_node"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+ "nodes": ["http://127.0.0.1:5001"]
+}' "http://localhost:5003/connect_node"
+
+curl -X POST -H "Content-Type: application/json" -d '{
+ "nodes": ["http://127.0.0.1:5000"]
+}' "http://localhost:5001/nodes/register"
+
+# add some transactions
+curl -X POST -H "Content-Type: application/json" -d '{
+ "sender": "your-adress",
+ "receiver": "someone-other-address",
+ "amount": some_amount
+}' "http://localhost:5001/add_transaction"
+
+# mine a new block
+curl -X GET http://localhost:5002/mine_block
+
+# get the full blockchain
+curl -X GET http://localhost:5003/get_chain
+
+#check the validity of blockchain
+curl -X GET http://localhost:5002/is_valid
+
+# Replacing the chain by the longest chain if needed
+curl -X GET http://localhost:5001/replace_chain
+```
+---
+
+
 <a id="References"></a>
 
 ## REFERENCES
@@ -511,3 +564,4 @@ chain-technology-e4fce36a1e
 [5]https://flask.palletsprojects.com/en/2.0.x/
 
 [6]https://learning.postman.com/docs/developer/intro-api/
+
